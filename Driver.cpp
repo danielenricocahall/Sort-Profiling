@@ -2,6 +2,7 @@
 #include "InsertionSorter.h"
 #include "SelectionSorter.h"
 #include "MergeSorter.h"
+#include "HeapSorter.h"
 #include <random>
 #include <algorithm>
 #include <iterator>
@@ -9,10 +10,9 @@
 #include <functional>
 
 
-std::deque<unsigned int> generateRandomdeque(int NumberCount, int minimum, int maximum) {
+std::deque<unsigned int> generateRandomDeque(int NumberCount, int minimum, int maximum) {
 	std::random_device rd;
 	std::mt19937 gen(rd()); // these can be global and/or static, depending on how you use random elsewhere
-
 	std::deque<unsigned int> values(NumberCount);
 	std::uniform_int_distribution<> dis(minimum, maximum);
 	std::generate(values.begin(), values.end(), [&]() { return dis(gen); });
@@ -21,8 +21,8 @@ std::deque<unsigned int> generateRandomdeque(int NumberCount, int minimum, int m
 
 int main()
 {
-	std::deque<unsigned int> foo = generateRandomdeque(10, 0, 1000);
-	Sorter * sorter = new MergeSorter(foo);
+	std::deque<unsigned int> foo = generateRandomDeque(10, 0, 1000);
+	Sorter * sorter = new HeapSorter(foo);
 	sorter->sort();
 	std::deque<unsigned int> bar = sorter->getSortedCollection();
 	for (auto it = bar.begin(); it != bar.end(); ++it)
