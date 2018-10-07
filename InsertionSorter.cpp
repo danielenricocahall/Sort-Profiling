@@ -2,7 +2,7 @@
 
 InsertionSorter::InsertionSorter()
 {
-
+	m_sort_name = "Insertion";
 }
 
 InsertionSorter::~InsertionSorter()

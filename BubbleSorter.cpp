@@ -3,7 +3,7 @@
 
 BubbleSorter::BubbleSorter()
 {
-
+	m_sort_name = "Bubble";
 }
 BubbleSorter::~BubbleSorter()
 {

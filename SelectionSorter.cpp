@@ -2,7 +2,7 @@
 
 SelectionSorter::SelectionSorter()
 {
-
+	m_sort_name = "Selection";
 }
 
 SelectionSorter::~SelectionSorter()

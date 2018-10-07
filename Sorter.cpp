@@ -33,3 +33,13 @@ std::deque<unsigned int> Sorter::getSortedCollection() const
 {
 	return m_vec;
 }
+
+void Sorter::setCollection(const std::deque<unsigned int>& collection)
+{
+	m_vec = collection;
+}
+
+std::string Sorter::getName()
+{
+	return m_sort_name;
+}

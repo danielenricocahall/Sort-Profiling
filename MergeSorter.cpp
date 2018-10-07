@@ -2,7 +2,7 @@
 
 MergeSorter::MergeSorter()
 {
-
+	m_sort_name = "Merge";
 }
 
 MergeSorter::~MergeSorter()

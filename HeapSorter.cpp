@@ -3,7 +3,7 @@
 #include <algorithm>
 HeapSorter::HeapSorter()
 {
-
+	m_sort_name = "Heap";
 }
 HeapSorter::~HeapSorter()
 {
