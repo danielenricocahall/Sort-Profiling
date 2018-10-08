@@ -12,6 +12,8 @@ HeapSorter::~HeapSorter()
 void HeapSorter::sort()
 {
 	std::make_heap(m_vec.begin(), m_vec.end());
+	std::sort_heap(m_vec.begin(), m_vec.end());
+	/*
 	std::deque<unsigned int> sorted_collection;
 	while(!m_vec.empty())
 	{
@@ -20,5 +22,6 @@ void HeapSorter::sort()
 		sorted_collection.push_front(m_vec.front());
 	}
 	m_vec = sorted_collection;
+	*/
 
 }

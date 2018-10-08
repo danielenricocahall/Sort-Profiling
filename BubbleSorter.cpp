@@ -11,15 +11,18 @@ BubbleSorter::~BubbleSorter()
 }
 void BubbleSorter::sort()
 {
-	for (unsigned int ii = 0; ii < m_vec.size()-1; ++ii)
+	bool sorted = false;
+	while(!sorted)
 	{
-		for (unsigned jj = 0; jj < m_vec.size() - ii - 1; ++jj)
+		sorted = true;
+		for (unsigned int ii = 0; ii < m_vec.size()-1; ++ii)
 		{
-			if (m_vec[jj] > m_vec[jj + 1])
+			if (m_vec[ii] > m_vec[ii + 1])
 			{
-				swap(jj, jj + 1);
+				swap(ii, ii + 1);
+				sorted = false;
 			}
+
 		}
-		
 	}
 }
