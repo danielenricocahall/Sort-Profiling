@@ -10,7 +10,7 @@
 
 BSTSorter::BSTSorter()
 {
-
+	m_sort_name = "BST";
 }
 BSTSorter::~BSTSorter()
 {
@@ -21,4 +21,6 @@ void BSTSorter::sort()
 {
 	BinarySearchTree * bst = new BinarySearchTree();
 	bst->insert(m_vec);
+	bst->traverseTreeInOrder();
+	m_vec = bst->getOrderedCollection();
 }

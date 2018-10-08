@@ -8,7 +8,7 @@ public:
 
 	enum SortType
 	{
-		BUBBLE, HEAP, MERGE, INSERTION, SELECTION
+		BUBBLE, HEAP, MERGE1, MERGE8, MERGE16, MERGE32, MERGE64, INSERTION, SELECTION, BST
 	};
 
 	static SorterFactory& getInstance()

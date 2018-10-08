@@ -66,30 +66,38 @@ void BinarySearchTree::insertionHelper(BSTNode * current_node, BSTNode * inserti
 	}
 }
 
-void BinarySearchTree::traverseTreePreOrder() const
+void BinarySearchTree::traverseTreePreOrder()
 {
+	if(!m_ordered_collection.empty())
+	{
+		m_ordered_collection.clear();
+	}
 	preOrderTraversalHelper(root);
 }
 
-void BinarySearchTree::preOrderTraversalHelper(BSTNode * current_node) const
+void BinarySearchTree::preOrderTraversalHelper(BSTNode * current_node)
 {
 	if(current_node == nullptr)
 	{
 		return;
 	}
-	std::cout << current_node->value << std::endl;
+	m_ordered_collection.push_back(current_node->value);
 
 	preOrderTraversalHelper(current_node->left);
 
 	preOrderTraversalHelper(current_node->right);
 }
 
-void BinarySearchTree::traverseTreeInOrder() const
+void BinarySearchTree::traverseTreeInOrder()
 {
+	if(!m_ordered_collection.empty())
+	{
+		m_ordered_collection.clear();
+	}
 	inOrderTraversalHelper(root);
 }
 
-void BinarySearchTree::inOrderTraversalHelper(BSTNode * current_node) const
+void BinarySearchTree::inOrderTraversalHelper(BSTNode * current_node)
 {
 	if(current_node == nullptr)
 	{
@@ -97,27 +105,39 @@ void BinarySearchTree::inOrderTraversalHelper(BSTNode * current_node) const
 	}
 	inOrderTraversalHelper(current_node->left);
 
-	std::cout << current_node->value << std::endl;
+	//std::cout << current_node->value << std::endl;
+	m_ordered_collection.push_back(current_node->value);
+
 
 	inOrderTraversalHelper(current_node->right);
 }
 
-void BinarySearchTree::traverseTreePostOrder() const
+void BinarySearchTree::traverseTreePostOrder()
 {
+	if(!m_ordered_collection.empty())
+	{
+		m_ordered_collection.clear();
+	}
 	postOrderTraversalHelper(root);
 }
 
-void BinarySearchTree::postOrderTraversalHelper(BSTNode * current_node) const
+void BinarySearchTree::postOrderTraversalHelper(BSTNode * current_node)
 {
 	if(current_node == nullptr)
 	{
 		return;
 	}
-	inOrderTraversalHelper(current_node->left);
-	inOrderTraversalHelper(current_node->right);
+	postOrderTraversalHelper(current_node->left);
+	postOrderTraversalHelper(current_node->right);
 
 
-	std::cout << current_node->value << std::endl;
+	m_ordered_collection.push_back(current_node->value);
 
 }
+
+std::deque<unsigned int> BinarySearchTree::getOrderedCollection() const
+{
+	return m_ordered_collection;
+}
+
 

@@ -73,7 +73,6 @@ void runProfilingTest(const SorterFactory::SortType& type, const std::string mod
 
 		}
 		previous_value = average;
-
 	}
 
     myfile.close();
@@ -83,39 +82,44 @@ void runProfilingTest(const SorterFactory::SortType& type, const std::string mod
 
 int main()
 {
-	BinarySearchTree * bst = new BinarySearchTree();
-	//std::deque<unsigned int> collection = generateRandomDeque(5, 1, 5);
-	//std::deque<unsigned int> collection = {0,1,2,3,4,5,6,7,8,9};
-	std::deque<unsigned int> collection = {5, 3, 8, 4, 6, 9, 2};
-
-	for(auto it = collection.begin(); it != collection.end(); ++it)
-	{
-		std::cout << (*it) << ",";
-	}
-	bst->insert(collection);
-	std::cout << "\n";
-
-	std::cout << "In Order:" << std::endl;
-	bst->traverseTreeInOrder();
-	std::cout << "\n";
-
-	std::cout << "Pre Order:" << std::endl;
-	bst->traverseTreePreOrder();
-	std::cout << "\n";
 
 
-	std::cout << "Post Order:" << std::endl;
-	bst->traverseTreePostOrder();
+	runProfilingTest(SorterFactory::SortType::BUBBLE, "unsorted");
+	runProfilingTest(SorterFactory::SortType::SELECTION, "unsorted");
+	runProfilingTest(SorterFactory::SortType::INSERTION, "unsorted");
+	runProfilingTest(SorterFactory::SortType::HEAP, "unsorted");
+	runProfilingTest(SorterFactory::SortType::MERGE1, "unsorted");
+	runProfilingTest(SorterFactory::SortType::MERGE8, "unsorted");
+	runProfilingTest(SorterFactory::SortType::MERGE16, "unsorted");
+	runProfilingTest(SorterFactory::SortType::MERGE32, "unsorted");
+	runProfilingTest(SorterFactory::SortType::MERGE64, "unsorted");
+	runProfilingTest(SorterFactory::SortType::BST, "unsorted");
 
-	/*
-	runProfilingTest(SorterFactory::SortType::BUBBLE);
-	runProfilingTest(SorterFactory::SortType::SELECTION);
-	runProfilingTest(SorterFactory::SortType::INSERTION);
-	runProfilingTest(SorterFactory::SortType::HEAP);
-	runProfilingTest(SorterFactory::SortType::MERGE);
-	*/
+
+	runProfilingTest(SorterFactory::SortType::BUBBLE, "sorted");
+	runProfilingTest(SorterFactory::SortType::SELECTION, "sorted");
+	runProfilingTest(SorterFactory::SortType::INSERTION, "sorted");
+	runProfilingTest(SorterFactory::SortType::HEAP, "sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE1, "sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE8, "sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE16, "sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE32, "sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE64, "sorted");
+	runProfilingTest(SorterFactory::SortType::BST, "sorted");
+
+	runProfilingTest(SorterFactory::SortType::BUBBLE, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::SELECTION, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::INSERTION, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::HEAP, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE1, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE8, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE16, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE32, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::MERGE64, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::BST, "half-sorted");
 
 	return 0;
+
 
 }
 
