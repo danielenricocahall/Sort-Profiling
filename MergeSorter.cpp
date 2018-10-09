@@ -1,21 +1,20 @@
 #include "MergeSorter.h"
 #include "SorterFactory.h"
-MergeSorter::MergeSorter()
-{
-	m_sort_name = "Merge";
-	m_threshold = 1;
-}
+#include <iostream>
 
-MergeSorter::MergeSorter(const unsigned int threshold)
+
+MergeSorter::MergeSorter(unsigned int threshold)
 {
-	m_sort_name = "Merge";
 	m_threshold = threshold;
+	m_sort_name = std::string("Merge_" + std::to_string(m_threshold));
+
 }
 
-MergeSorter::MergeSorter(const std::deque<unsigned int>& collection, const unsigned int threshold)
+MergeSorter::MergeSorter(const std::deque<unsigned int>& collection, unsigned int threshold)
 {
 	m_vec = collection;
 	m_threshold = threshold;
+	m_sort_name = std::string("Merge_" + std::to_string(m_threshold));
 }
 
 MergeSorter::~MergeSorter()
@@ -44,6 +43,7 @@ void MergeSorter::sort()
 		sorter->setCollection(m_vec);
 		sorter->sort();
 		m_vec = sorter->getSortedCollection();
+		delete sorter;
 
 	}
 

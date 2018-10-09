@@ -11,16 +11,19 @@
 #include <numeric>
 #include <iostream>
 #include <thread>
+#include <stdlib.h>     /* srand, rand */
+
 #include "BinarySearchTree.h"
 
 
-std::deque<unsigned int> generateRandomDeque(unsigned int NumberCount, unsigned int minimum, unsigned int maximum) {
-	std::random_device rd;
-	std::mt19937 gen(rd()); // these can be global and/or static, depending on how you use random elsewhere
-	std::deque<unsigned int> values(NumberCount);
-	std::uniform_int_distribution<> dis(minimum, maximum);
-	std::generate(values.begin(), values.end(), [&]() { return dis(gen); });
-	return values;
+std::deque<unsigned int> generateRandomDeque(const unsigned int num, const unsigned int minimum, const unsigned int maximum) {
+	std::deque<unsigned int> random_values;
+	for(unsigned int ii = 0; ii < num; ++ii)
+	{
+		random_values.push_back(rand() % maximum + minimum);
+	}
+	std::random_shuffle(random_values.begin(), random_values.end());
+	return random_values;
 }
 
 void runProfilingTest(const SorterFactory::SortType& type, const std::string mode)
@@ -30,7 +33,7 @@ void runProfilingTest(const SorterFactory::SortType& type, const std::string mod
 			SorterFactory::getInstance().createSorter(type);
 
 	// define element sweep
-	std::vector<unsigned int> N = {1000, 10000, 100000};
+	std::vector<unsigned int> N = {1000, 10000, 100000, 1000000, 10000000};
 
 	// create file
     std::ofstream myfile;
@@ -84,21 +87,29 @@ int main()
 {
 
 
+	std::thread t1(runProfilingTest, SorterFactory::SortType::HEAP, "unsorted");
+	std::thread t2(runProfilingTest, SorterFactory::SortType::MERGE1, "unsorted");
+	std::thread t3(runProfilingTest, SorterFactory::SortType::MERGE8, "unsorted");
+	std::thread t4(runProfilingTest, SorterFactory::SortType::MERGE16, "unsorted");
+	std::thread t5(runProfilingTest,SorterFactory::SortType::MERGE32, "unsorted");
+	std::thread t6(runProfilingTest,SorterFactory::SortType::MERGE64, "unsorted");
+	std::thread t7(runProfilingTest,SorterFactory::SortType::BST, "unsorted");
+	/*
 	runProfilingTest(SorterFactory::SortType::BUBBLE, "unsorted");
 	runProfilingTest(SorterFactory::SortType::SELECTION, "unsorted");
 	runProfilingTest(SorterFactory::SortType::INSERTION, "unsorted");
-	runProfilingTest(SorterFactory::SortType::HEAP, "unsorted");
-	runProfilingTest(SorterFactory::SortType::MERGE1, "unsorted");
-	runProfilingTest(SorterFactory::SortType::MERGE8, "unsorted");
-	runProfilingTest(SorterFactory::SortType::MERGE16, "unsorted");
-	runProfilingTest(SorterFactory::SortType::MERGE32, "unsorted");
-	runProfilingTest(SorterFactory::SortType::MERGE64, "unsorted");
-	runProfilingTest(SorterFactory::SortType::BST, "unsorted");
+	*/
+	t1.join();
+	t2.join();
+	t3.join();
+	t4.join();
+	t5.join();
+	t6.join();
+	t7.join();
 
 
-	runProfilingTest(SorterFactory::SortType::BUBBLE, "sorted");
-	runProfilingTest(SorterFactory::SortType::SELECTION, "sorted");
-	runProfilingTest(SorterFactory::SortType::INSERTION, "sorted");
+	/*
+
 	runProfilingTest(SorterFactory::SortType::HEAP, "sorted");
 	runProfilingTest(SorterFactory::SortType::MERGE1, "sorted");
 	runProfilingTest(SorterFactory::SortType::MERGE8, "sorted");
@@ -106,10 +117,10 @@ int main()
 	runProfilingTest(SorterFactory::SortType::MERGE32, "sorted");
 	runProfilingTest(SorterFactory::SortType::MERGE64, "sorted");
 	runProfilingTest(SorterFactory::SortType::BST, "sorted");
+	runProfilingTest(SorterFactory::SortType::BUBBLE, "sorted");
+	runProfilingTest(SorterFactory::SortType::SELECTION, "sorted");
+	runProfilingTest(SorterFactory::SortType::INSERTION, "sorted");
 
-	runProfilingTest(SorterFactory::SortType::BUBBLE, "half-sorted");
-	runProfilingTest(SorterFactory::SortType::SELECTION, "half-sorted");
-	runProfilingTest(SorterFactory::SortType::INSERTION, "half-sorted");
 	runProfilingTest(SorterFactory::SortType::HEAP, "half-sorted");
 	runProfilingTest(SorterFactory::SortType::MERGE1, "half-sorted");
 	runProfilingTest(SorterFactory::SortType::MERGE8, "half-sorted");
@@ -117,6 +128,10 @@ int main()
 	runProfilingTest(SorterFactory::SortType::MERGE32, "half-sorted");
 	runProfilingTest(SorterFactory::SortType::MERGE64, "half-sorted");
 	runProfilingTest(SorterFactory::SortType::BST, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::BUBBLE, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::SELECTION, "half-sorted");
+	runProfilingTest(SorterFactory::SortType::INSERTION, "half-sorted");
+	*/
 
 	return 0;
 
