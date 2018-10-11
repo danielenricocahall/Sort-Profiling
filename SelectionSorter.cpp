@@ -24,7 +24,7 @@ void SelectionSorter::sort()
 		}
 		if (minIndex != ii)
 		{
-			swap(minIndex, ii);
+			std::swap(m_vec[minIndex], m_vec[ii]);
 		}
 	}
 }

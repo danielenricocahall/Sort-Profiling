@@ -11,7 +11,7 @@ public:
 	virtual ~Sorter();
 	virtual void sort() = 0;
 	virtual void setCollection(const std::deque<unsigned int>& collection);
-	virtual void swap(const unsigned int ii, const unsigned int jj);
+	//virtual void swap(const unsigned int ii, const unsigned int jj);
 	virtual std::deque<unsigned int> getSortedCollection() const;
 	std::string getName();
 

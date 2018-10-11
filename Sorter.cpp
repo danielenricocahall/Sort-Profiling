@@ -16,7 +16,8 @@ Sorter::~Sorter()
 	m_vec.clear();
 }
 
-
+/*
+//
 void Sorter::swap(const unsigned int ii, const unsigned int jj)
 {
 	// ensure we're not doing anything stupid
@@ -27,7 +28,7 @@ void Sorter::swap(const unsigned int ii, const unsigned int jj)
 		m_vec[jj] = m_vec[ii] - m_vec[jj];
 		m_vec[ii] = m_vec[ii] - m_vec[jj];
 	}
-}
+}*/
 
 std::deque<unsigned int> Sorter::getSortedCollection() const
 {

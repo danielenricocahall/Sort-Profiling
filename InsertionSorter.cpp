@@ -17,7 +17,7 @@ void InsertionSorter::sort()
 		unsigned int jj = ii;
 		while (jj > 0 && m_vec[jj - 1] > m_vec[jj])
 		{
-			swap(jj, jj - 1);
+			std::swap(m_vec[jj], m_vec[jj-1]);
 			--jj;
 		}
 	}

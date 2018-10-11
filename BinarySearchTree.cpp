@@ -16,6 +16,7 @@ BinarySearchTree::BinarySearchTree()
 BinarySearchTree::~BinarySearchTree()
 {
 	delete root;
+	m_ordered_collection.clear();
 }
 
 void BinarySearchTree::insert(const unsigned int value)
@@ -105,9 +106,7 @@ void BinarySearchTree::inOrderTraversalHelper(BSTNode * current_node)
 	}
 	inOrderTraversalHelper(current_node->left);
 
-	//std::cout << current_node->value << std::endl;
 	m_ordered_collection.push_back(current_node->value);
-
 
 	inOrderTraversalHelper(current_node->right);
 }
@@ -129,7 +128,6 @@ void BinarySearchTree::postOrderTraversalHelper(BSTNode * current_node)
 	}
 	postOrderTraversalHelper(current_node->left);
 	postOrderTraversalHelper(current_node->right);
-
 
 	m_ordered_collection.push_back(current_node->value);
 

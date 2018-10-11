@@ -39,6 +39,10 @@ void MergeSorter::sort()
 	}
 	else
 	{
+		// creating a new Selection Sorter every time may hurt the performance a bit...
+		// I suppose I could just pass one Selection Sort to all of them by reference
+		// through the constructor which they can use, but I'm feeling lazy
+
 		Sorter * sorter = SorterFactory::getInstance().createSorter(SorterFactory::SortType::SELECTION);
 		sorter->setCollection(m_vec);
 		sorter->sort();

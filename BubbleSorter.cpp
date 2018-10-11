@@ -19,7 +19,7 @@ void BubbleSorter::sort()
 		{
 			if (m_vec[ii] > m_vec[ii + 1])
 			{
-				swap(ii, ii + 1);
+				std::swap(m_vec[ii], m_vec[ii+1]);
 				sorted = false;
 			}
 
