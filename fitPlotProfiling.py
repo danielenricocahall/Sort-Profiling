@@ -18,7 +18,7 @@ PATH = './' # Use your path
 
 ### Fetch all files in path
 fileNames = os.listdir(PATH)
-mode = "_sorted"
+mode = "half-sorted"
 ### Filter file name list for files ending with .csv
 fileNames = [file for file in fileNames if mode in file]
 
@@ -43,8 +43,7 @@ for file in fileNames:
             popt, pcov = curve_fit(square, x, y)
             plt.semilogx(x, square(x, *popt), '*', label = label + "_fit " + str(round(popt[0],12)) + ' n^2')
 
-    elif mode is "_sorted":
-        print(file) 
+    elif mode is "completely-sorted":
         if "Merge" in file or "Heap" in file:
             popt, pcov = curve_fit(log, x, y)
             plt.semilogx(x, log(x, *popt), '*', label = label + "_fit " + str(round(popt[0],12)) + ' n log n + ' + str(round(popt[1],12)) + ' n')
