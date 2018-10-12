@@ -13,8 +13,7 @@ def square(n, k):
 
 def linear(n, k):
     return k*n
-### Set your path to the folder containing the .csv files
-PATH = './' # Use your path
+PATH = '../Results/' 
 
 ### Fetch all files in path
 fileNames = os.listdir(PATH)
