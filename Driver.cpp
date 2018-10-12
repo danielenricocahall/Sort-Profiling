@@ -90,31 +90,24 @@ int main()
 {
 
 	const std::string mode = "half-sorted";
-
-
-
 	// yay multithreading
-	/*
 	std::thread t1(runProfilingTest, SorterFactory::SortType::HEAP, mode);
 	std::thread t2(runProfilingTest, SorterFactory::SortType::MERGE1, mode);
 	std::thread t3(runProfilingTest, SorterFactory::SortType::MERGE8, mode);
 	std::thread t4(runProfilingTest, SorterFactory::SortType::MERGE16, mode);
 	std::thread t5(runProfilingTest,SorterFactory::SortType::MERGE32, mode);
 	std::thread t6(runProfilingTest,SorterFactory::SortType::MERGE64, mode);
-	*/
 	std::thread t7(runProfilingTest,SorterFactory::SortType::BST, mode);
 	std::thread t8(runProfilingTest, SorterFactory::SortType::BUBBLE, mode);
 	std::thread t9(runProfilingTest,SorterFactory::SortType::SELECTION, mode);
 	std::thread t10(runProfilingTest,SorterFactory::SortType::INSERTION, mode);
 
-
-	/*
 	t1.join();
 	t2.join();
 	t3.join();
 	t4.join();
 	t5.join();
-	t6.join();*/
+	t6.join();
 	t7.join();
 	t8.join();
 	t9.join();
