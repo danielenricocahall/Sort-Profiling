@@ -23,4 +23,5 @@ void BSTSorter::sort()
 	bst->insert(m_vec);
 	bst->traverseTreeInOrder();
 	m_vec = bst->getOrderedCollection();
+	delete bst;
 }

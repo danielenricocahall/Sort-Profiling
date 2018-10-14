@@ -20,6 +20,12 @@ private:
 		unsigned int value;
 		BSTNode * left = nullptr;
 		BSTNode * right = nullptr;
+
+		~BSTNode()
+		{
+			delete left;
+			delete right;
+		}
 	};
 	BSTNode * root;
 	std::deque<unsigned int> m_ordered_collection;
