@@ -10,7 +10,9 @@ Implementation and profiling of various sorting algorithms, including:
   * placing all elements in a binary search tree, and performing in-order traversal
  
  
-All implementations are in C++, as that is the language I am most familiar with. The algorithms are contained in an object which implements the Sorter interface, so extending this project to support other sorts (such as Gnome, Tim, Shell, or Stooge) should be fairly trivial.
+All implementations are in C++, as that is the language I am most familiar with. The algorithms are contained in an object which implements the Sorter interface, so extending this project to support other sorts (such as Tim, Shell, or Stooge) should be fairly trivial. 
+
+(Note: Gnome sort was implemented for fun, but not profiled. It's performance would probably be somewhere Selection and Insertion sort)
  
  To demonstrate the relative strengths and weaknesses of each algorithm, they were tested under 3 conditions:
  * Completely sorted list
