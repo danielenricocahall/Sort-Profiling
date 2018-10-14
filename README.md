@@ -21,10 +21,12 @@ All implementations are in C++, as that is the language I am most familiar with.
  
  ## Profiling Results ##
 ![alt text](https://github.com/danielenricocahall/Advanced-DAA-Sort-Profiling/blob/master/Results/Completely_Sorted_Profiling_Results.png)
+![alt text](https://github.com/danielenricocahall/Advanced-DAA-Sort-Profiling/blob/master/Results/Half_Sorted_Profiling_Results.png)
  ![alt text](https://github.com/danielenricocahall/Advanced-DAA-Sort-Profiling/blob/master/Results/Unsorted_Profiling_Results.png)
  
  ## Current/Preceding Results ##
 ![alt text](https://github.com/danielenricocahall/Advanced-DAA-Sort-Profiling/blob/master/Results/Completely_Sorted_Ratio_Results.png)
+![alt text](https://github.com/danielenricocahall/Advanced-DAA-Sort-Profiling/blob/master/Results/Half_Sorted_Ratio_Results.png)
  ![alt text](https://github.com/danielenricocahall/Advanced-DAA-Sort-Profiling/blob/master/Results/Unsorted_Ratio_Results.png)
  
  ## Conclusions ##
