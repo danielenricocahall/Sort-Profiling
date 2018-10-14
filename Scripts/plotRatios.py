@@ -9,7 +9,7 @@ PATH = '../Results/'
 
 ### Fetch all files in path
 fileNames = os.listdir(PATH)
-mode = "unsorted"
+mode = "half-sorted"
 ### Filter file name list for files ending with .csv
 fileNames = [file for file in fileNames if mode in file]
 
