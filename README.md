@@ -1,4 +1,4 @@
-# Advanced-DAA-Sort-Profiling
+# Sort-Profiling
 Implementation and profiling of various sorting algorithms, including:
 
 * Bubble Sort
