@@ -8,9 +8,7 @@ GnomeSorter::GnomeSorter()
 }
 
 GnomeSorter::~GnomeSorter()
-{
-
-}
+= default;
 
 
 // Gnome sort is just the poor man's Insertion Sort

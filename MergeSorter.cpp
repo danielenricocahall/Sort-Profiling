@@ -18,9 +18,7 @@ MergeSorter::MergeSorter(const std::deque<unsigned int>& collection, unsigned in
 }
 
 MergeSorter::~MergeSorter()
-{
-
-}
+= default;
 
 void MergeSorter::sort()
 {

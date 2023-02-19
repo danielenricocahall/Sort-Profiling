@@ -5,6 +5,6 @@ class SelectionSorter : public Sorter
 {
 public:
 	SelectionSorter();
-	virtual ~SelectionSorter();
-	virtual void sort();
+	~SelectionSorter() override;
+	void sort() override;
 };

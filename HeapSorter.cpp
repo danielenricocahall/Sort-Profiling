@@ -6,9 +6,7 @@ HeapSorter::HeapSorter()
 	m_sort_name = "Heap";
 }
 HeapSorter::~HeapSorter()
-{
-
-}
+= default;
 void HeapSorter::sort()
 {
 	// I love the std library

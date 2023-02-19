@@ -12,9 +12,9 @@ class BSTSorter : public Sorter
 {
 public:
 	BSTSorter();
-	BSTSorter(std::deque<unsigned int>&vec) : Sorter(vec) {};
+	explicit BSTSorter(std::deque<unsigned int>&vec) : Sorter(vec) {};
 
-	virtual ~BSTSorter();
-	virtual void sort();
+	~BSTSorter() override;
+	void sort() override;
 private:
 };

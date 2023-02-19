@@ -5,6 +5,6 @@ class GnomeSorter : public Sorter
 {
 public:
 	GnomeSorter();
-	virtual ~GnomeSorter();
+	~GnomeSorter() override;
 	virtual void sort();
 };

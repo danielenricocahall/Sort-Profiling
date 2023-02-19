@@ -5,6 +5,6 @@ class BubbleSorter : public Sorter
 {
 public:
 	BubbleSorter();
-	virtual ~BubbleSorter();
-	virtual void sort();
+	~BubbleSorter() override;
+	void sort() override;
 };

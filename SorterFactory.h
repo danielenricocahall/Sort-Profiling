@@ -27,7 +27,7 @@ public:
 		return factory;
 	}
 
-	Sorter * createSorter(const SortType& type) const;
+	static Sorter * createSorter(const SortType& type) ;
 
 
 private:

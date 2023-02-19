@@ -7,7 +7,7 @@ class Sorter
 {
 public:
 	Sorter();
-	Sorter(std::deque<unsigned int>& vec);
+	explicit Sorter(std::deque<unsigned int>& vec);
 	virtual ~Sorter();
 	virtual void sort() = 0;
 	virtual void setCollection(const std::deque<unsigned int>& collection);

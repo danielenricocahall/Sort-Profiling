@@ -21,7 +21,7 @@ BinarySearchTree::~BinarySearchTree()
 
 void BinarySearchTree::insert(const unsigned int value)
 {
-	BSTNode * node = new BSTNode();
+	auto * node = new BSTNode();
 	node->value = value;
 	if(root == nullptr)
 	{
@@ -35,9 +35,9 @@ void BinarySearchTree::insert(const unsigned int value)
 
 void BinarySearchTree::insert(const std::deque<unsigned int>& values)
 {
-	for(auto it = values.begin(); it != values.end(); ++it)
+	for(unsigned int value : values)
 	{
-		insert((*it));
+		insert(value);
 	}
 }
 

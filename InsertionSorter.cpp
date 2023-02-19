@@ -6,9 +6,7 @@ InsertionSorter::InsertionSorter()
 }
 
 InsertionSorter::~InsertionSorter()
-{
-
-}
+= default;
 
 void InsertionSorter::sort()
 {

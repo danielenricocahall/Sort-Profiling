@@ -1,6 +1,7 @@
 #include "SorterFactory.h"
 
 #include <fstream>
+#include <random>
 #include <string>
 #include <random>
 #include <algorithm>
@@ -21,7 +22,7 @@ std::deque<unsigned int> generateRandomDeque(const unsigned int num, const unsig
 	{
 		random_values.push_back(rand() % maximum + minimum);
 	}
-	std::random_shuffle(random_values.begin(), random_values.end());
+	std::shuffle(random_values.begin(), random_values.end(), std::mt19937(std::random_device()()));
 	return random_values;
 }
 
@@ -29,7 +30,7 @@ void runProfilingTest(const SorterFactory::SortType& type, const std::string& mo
 {
 
 	Sorter * sorter =
-			SorterFactory::getInstance().createSorter(type);
+			SorterFactory::createSorter(type);
 
 	// define element sweep
 	const std::vector<unsigned int> N = {1000, 10000, 100000, 1000000, 10000000};

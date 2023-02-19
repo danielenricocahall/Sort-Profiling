@@ -5,7 +5,7 @@ class HeapSorter : public Sorter
 {
 public:
 	HeapSorter();
-	virtual ~HeapSorter();
-	virtual void sort();
+	~HeapSorter() override;
+	void sort() override;
 
 };

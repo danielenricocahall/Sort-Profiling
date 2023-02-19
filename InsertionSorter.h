@@ -5,6 +5,6 @@ class InsertionSorter : public Sorter
 {
 public:
 	InsertionSorter();
-	virtual ~InsertionSorter();
-	virtual void sort();
+	~InsertionSorter() override;
+	void sort() override;
 };

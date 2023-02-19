@@ -6,9 +6,7 @@ SelectionSorter::SelectionSorter()
 }
 
 SelectionSorter::~SelectionSorter()
-{
-
-}
+= default;
 
 void SelectionSorter::sort()
 {

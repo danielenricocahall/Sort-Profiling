@@ -6,7 +6,7 @@ class BinarySearchTree
 public:
 	BinarySearchTree();
 	virtual ~BinarySearchTree();
-	void insert(const unsigned int value);
+	void insert(unsigned int value);
 	void insert(const std::deque<unsigned int>& values);
 	void traverseTreePreOrder();
 	void traverseTreePostOrder();
@@ -17,7 +17,7 @@ private:
 
 	struct BSTNode
 	{
-		unsigned int value;
+		unsigned int value{};
 		BSTNode * left = nullptr;
 		BSTNode * right = nullptr;
 

@@ -14,17 +14,13 @@
 
 
 SorterFactory::SorterFactory()
-{
-
-}
+= default;
 
 SorterFactory::~SorterFactory()
-{
-
-}
+= default;
 
 
-Sorter * SorterFactory::createSorter(const SortType& type) const
+Sorter * SorterFactory::createSorter(const SortType& type)
 {
 	switch(type)
 	{
